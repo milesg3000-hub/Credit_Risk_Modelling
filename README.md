@@ -1,7 +1,7 @@
 # Credit_Risk_Modelling
 1. ## Overview
-   This project investigates the impact of different features on whether Taiwenese customers default on their loan payment, using the UCI dataset that includes 30,000 observations. The features are detailed below:
-   # Information about features of UCI dataset
+   This project investigates the impact of different features on whether Taiwenese customers default on their loan payment, using the UCI dataset that includes 30,000 observations. The features of the datset are detailed below.
+   #### Information about features of UCI dataset
 
 <details>
 <summary><strong> Features overview (click to expand)</strong></summary>
