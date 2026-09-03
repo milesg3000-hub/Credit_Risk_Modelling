@@ -70,4 +70,10 @@ The machine learning algorithms applied in this project included logistic regres
 | **Decision Tree (Gini, $\alpha = 0.0002$)** | Holdout Test Set | 0.7501 | 0.4949 | 0.5002 | 37.96% | 81.82% |
 | **Decision Tree (Entropy, $\alpha = 0.0007$)** | Holdout Test Set | 0.7528 | **0.5376** | 0.5056 | 37.53% | **81.93%** |
 | **Custom Random Forest (OOP)** | Holdout Test Set | **0.7587** | 0.5189 | **0.5174** | 37.98% | 81.62% |
+### 3. Interpretation of Results
+
+*   **Model Discrimination & Rank-Ordering (ROC-AUC & Gini):** The **Custom Random Forest (OOP)** architecture demonstrated the highest discriminatory power, achieving a **ROC-AUC of 0.7587** and a **Gini coefficient of 0.5174** on the untouched holdout test set. This confirms that introducing non-linear ensemble methods significantly improves the pipeline's capability to rank-order risk and cleanly separate creditworthy borrowers from potential defaults compared to the baseline logit models.
+*   **Mitigating Class Imbalance (PR-AUC vs. Accuracy):** Given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), standard classification accuracy metrics are a misleading indicator of performance, plateauing uniformly around 81.6%–81.9%. Instead, optimizing the **Decision Tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy splitting)** yielded the strongest **PR-AUC of 0.5376**. Prioritizing the Precision-Recall curve ensures the pipeline maintains high precision while capturing true default events, directly limiting institutional exposure to catastrophic False Negatives.
+*   **Risk Population Separation (K-S Statistic):** The **Degree 2 Feature Map** achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during Stratified 5-Fold Cross-Validation. A K-S statistic approaching the 40% threshold indicates that the cumulative distribution functions of the default and non-default populations are highly differentiated. This provides an optimal mathematical framework for establishing precise credit-scoring cut-off thresholds for risk segmentation.
+
 
