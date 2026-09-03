@@ -66,7 +66,7 @@ The machine learning algorithms applied in this project included logistic regres
 | Model Architecture | Evaluation Set | ROC-AUC | PR-AUC | Gini | K-S Stat | Accuracy |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Logistic Regression (Baseline)** | 5-Fold CV (Val Mean) | 0.7394 | 0.5110 | 0.4787 | 38.35% | 81.86% |
-| **Logistic Regression (Degree 2 Map)** | 5-Fold CV (Val Mean) | 0.7447 | 0.5100 | 0.4894 | **38.52%** | 81.86% |
+| **Degree 2 Map Feature Map** | 5-Fold CV (Val Mean) | 0.7447 | 0.5100 | 0.4894 | **38.52%** | 81.86% |
 | **Decision Tree (Gini, $\alpha = 0.0002$)** | Holdout Test Set | 0.7501 | 0.4949 | 0.5002 | 37.96% | 81.82% |
 | **Decision Tree (Entropy, $\alpha = 0.0007$)** | Holdout Test Set | 0.7528 | **0.5376** | 0.5056 | 37.53% | **81.93%** |
 | **Custom Random Forest (OOP)** | Holdout Test Set | **0.7587** | 0.5189 | **0.5174** | 37.98% | 81.62% |
