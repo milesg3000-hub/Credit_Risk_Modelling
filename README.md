@@ -1,4 +1,4 @@
-# Credit_Risk_Modelling
+# Credit_Risk_Modelling Project: Summary of main results
 ## 1. Overview
    This project investigates the impact of different features on whether Taiwanese customers default on their loan payment, using the UCI dataset that includes 30,000 observations. The features of the dataset are detailed below.
    ### Information about features of UCI dataset
