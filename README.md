@@ -76,6 +76,6 @@ The machine learning algorithms applied in this project included logistic regres
 
 *   **Mitigating Class Imbalance (PR-AUC vs. Accuracy):** Given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), standard classification accuracy metrics are a misleading indicator of performance, plateauing uniformly around 81.6%–81.9%. Instead, optimizing the **Decision Tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy splitting)** yielded the strongest **PR-AUC of 0.5376**. Prioritizing the Precision-Recall curve ensures the pipeline maintains high precision while capturing true default events, directly limiting exposure to False Negatives.
 
-*   **Risk Population Separation (K-S Statistic):** The **Degree 2 Feature Map** achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during Stratified 5-Fold Cross-Validation. A K-S statistic approaching close to 40% illustrates that the feature map has provided some robust prediction.  This provides an optimal mathematical framework for establishing precise credit-scoring cut-off thresholds for risk segmentation.
+*   **Risk Population Separation (K-S Statistic):** The **Degree 2 Feature Map** achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during Stratified 5-Fold Cross-Validation. A K-S statistic approaching close to 40% illustrates that the feature map has provided a robust predictive model without overfitting or data leakage being present.
 
 
