@@ -59,8 +59,15 @@ default.payment.next.month: Default payment (1=yes, 0=no)
 
 </details>
 
-A feature of bill_amt_mean was also created taking the mean of the amount of bill statement across the six months. This decision on feature selection was taken to avoid introducing multicolinearity by including the repayment statuses for all of the six months.
+A feature of bill_amt_mean was also created taking the mean of the amount of bill statement across the six months. This decision on feature selection was taken to avoid introducing multicolinearity by including the bill amounts across all of the six months.
 The machine learning algorithms applied in this project included logistic regression fitted through MLE and optimized via Newton's method using only Numpy and Pandas, a 4-feature degree-2 map (using features of Repayment Status (Sep 2005), the mean of the bill_amt, age, and credit limit), cost-complexity pruned classification tree, and a custom Random Forest ensemble method built using OOP. Stratified k-cross fold validation (as outlined in the notebook) was used to resolve the train/test split paradigm, testing on the untouched test dataset once whilst keeping a validation set (subset of training data) before the full training set (training + validation) was tested on the test set (out of sample dataset) for each of the algorithms. There were various key metrics computed for all of the algorithms beyond simple ROC-AUC analysis to account for the class imbalance prevalent in the credit risk dataset. Indeed, only approximately 22% of the customers defaulted on their loan payment in the UCI dataset. The metrics included the Gini coefficient, KS statistic and PR-AUC metrics, the details of which are outlined in the notebook.
 
 ## 2. Model Performance Comparison
+| Model Architecture | Evaluation Set | ROC-AUC | PR-AUC | Gini | K-S Stat | Accuracy |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Logistic Regression (Baseline)** | 5-Fold CV (Val Mean) | 0.7394 | 0.5110 | 0.4787 | 38.35% | 81.86% |
+| **Logistic Regression (Degree 2 Map)** | 5-Fold CV (Val Mean) | 0.7447 | 0.5100 | 0.4894 | **38.52%** | 81.86% |
+| **Decision Tree (Gini, $\alpha = 0.0002$)** | Holdout Test Set | 0.7501 | 0.4949 | 0.5002 | 37.96% | 81.82% |
+| **Decision Tree (Entropy, $\alpha = 0.0007$)** | Holdout Test Set | 0.7528 | **0.5376** | 0.5056 | 37.53% | **81.93%** |
+| **Custom Random Forest (OOP)** | Holdout Test Set | **0.7587** | 0.5189 | **0.5174** | 37.98% | 81.62% |
 
