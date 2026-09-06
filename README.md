@@ -72,9 +72,11 @@ The machine learning algorithms applied in this project included logistic regres
 | **Custom Random Forest (OOP)** | Holdout Test Set | **0.7587** | 0.5189 | **0.5174** | 37.98% | 81.62% |
 ### 3. Interpretation of Results
 
-The custom random forest architecture demonstrated the highest discriminatory power, achieving a ROC-AUC of 0.7587 and a Gini coefficient of 0.5174 on the untouched holdout test set.
+The custom random forest architecture achieved a high ROC-AUC of 0.7587 and a Gini coefficient of 0.5174 on the untouched holdout test set.
 
-Given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), standard classification accuracy metrics can be a misleading indicator of performance. Instead, optimizing the decision tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy splitting) yielded the strongest PR-AUC of 0.5376.
+However. given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), a simple classification metric such as ROC-AUC applied to credit risk fails to address the class imbalance present where the proportion of customers who defaulted on their loan is lower than those who did not. 
+
+Optimizing the decision tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy measure of impurity) yielded the strongest PR-AUC of 0.5376.
 
 The degree 2 feature map achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during stratified 5-Fold cross-validation. 
 
