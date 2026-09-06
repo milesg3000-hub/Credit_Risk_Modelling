@@ -72,10 +72,10 @@ The machine learning algorithms applied in this project included logistic regres
 | **Custom Random Forest (OOP)** | Holdout Test Set | **0.7587** | 0.5189 | **0.5174** | 37.98% | 81.62% |
 ### 3. Interpretation of Results
 
-Model Discrimination & Rank-Ordering (ROC-AUC & Gini): The Custom Random Forest (OOP) architecture demonstrated the highest discriminatory power, achieving a ROC-AUC of 0.7587 and a Gini coefficient of 0.5174 on the untouched holdout test set.
+The custom random forest architecture demonstrated the highest discriminatory power, achieving a ROC-AUC of 0.7587 and a Gini coefficient of 0.5174 on the untouched holdout test set.
 
-Mitigating Class Imbalance (PR-AUC vs. Accuracy): Given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), standard classification accuracy metrics can be a misleading indicator of performance. Instead, optimizing the decision tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy splitting) yielded the strongest PR-AUC of 0.5376.
+Given the structural class imbalance inherent to this portfolio (where defaults comprise only 22% of observations), standard classification accuracy metrics can be a misleading indicator of performance. Instead, optimizing the decision tree via cost-complexity pruning ($\alpha = 0.0007$ with Entropy splitting) yielded the strongest PR-AUC of 0.5376.
 
-Risk Population Separation (K-S Statistic): The degree 2 feature map achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during stratified 5-Fold cross-validation. 
+The degree 2 feature map achieved the highest Kolmogorov-Smirnov statistic at **38.52%** during stratified 5-Fold cross-validation. 
 
 
